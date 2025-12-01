@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recirculate — No tires, intercambia y recicla</title>
+  <style>
+    :root{--accent:#2f855a;--dark:#0f1720;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:var(--dark); line-height:1.45}
+    a{color:inherit}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,#8bd0a6,#2f855a);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;padding:40px 0}
+    .hero h1{font-size:clamp(26px,4vw,40px);margin:0}
+    .hero p{color:var(--muted);margin:8px 0 0}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn.ghost{background:transparent;border:2px solid #e6f0ea;color:var(--accent)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .card{padding:18px;border-radius:12px;background:#f7faf7;box-shadow:0 6px 18px rgba(16,24,40,0.03)}
+    .card h3{margin:0 0 8px}
+    .how{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    footer{border-top:1px solid #eef2f0;margin-top:40px;padding:24px 0;color:var(--muted)}
+    @media (max-width:900px){.grid,.how{grid-template-columns:1fr} .hero{padding:24px 0}}
+    .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.45);visibility:hidden;opacity:0;transition:all .18s}
+    .modal.open{visibility:visible;opacity:1}
+    .modal-box{background:#fff;padding:20px;border-radius:12px;max-width:520px;width:100%}
+    label{display:block;font-size:13px;margin-top:10px;color:var(--muted)}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef0;margin-top:6px}
+    .row{display:flex;gap:10px}
+    .muted{color:var(--muted);font-size:13px}
+    .links{display:flex;gap:14px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">R</div>
+        <div>
+          <strong>Recirculate</strong><div class="muted">No tires, intercambia y recicla</div>
+        </div>
+      </div>
+      <nav class="links">
+        <a href="#como" class="muted">Cómo funciona</a>
+        <a href="#insignias" class="muted">Insignias</a>
+        <a href="#pilot" class="muted">Únete al piloto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Recirculate — dale una segunda vida a lo que no usas</h1>
+          <p>Una app de trueque local: publica, propone y cambia. Cero dinero. Mucha comunidad. Verás el impacto ecológico estimado de cada intercambio.</p>
+          <div class="cta-row">
+            <button class="btn" id="openJoin">Únete al piloto</button>
+            <a href="#como" class="btn ghost">Ver cómo funciona</a>
+          </div>
+        </div>
+
+        <div class="grid" aria-hidden>
+          <div class="card">
+            <h3>Sostenible</h3>
+            <p class="muted">Calculamos ahorro estimado por trueque (kg CO₂ y recursos).</p>
+          </div>
+          <div class="card">
+            <h3>Local</h3>
+            <p class="muted">Filtra por barrio para trueques cercanos y prácticos.</p>
+          </div>
+          <div class="card">
+            <h3>Comunidad</h3>
+            <p class="muted">Insignias, perfiles y reconocimiento para quienes lideran el cambio.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="como">
+        <h2>Cómo funciona (MVP — 3 pasos)</h2>
+        <div class="how">
+          <div class="card">
+            <h3>1. Publica</h3>
+            <p class="muted">Sube foto, categoría y estado del objeto.</p>
+          </div>
+          <div class="card">
+            <h3>2. Propón</h3>
+            <p class="muted">Busca objetos que te interesen y propone un trueque.</p>
+          </div>
+          <div class="card">
+            <h3>3. Intercambia</h3>
+            <p class="muted">Cerrad trato, marcadlo como completado y sumad impacto ecológico.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="insignias">
+        <h2>Insignias y reconocimiento</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Truequeador Novato</h3>
+            <p class="muted">1 intercambio completado</p>
+          </div>
+          <div class="card">
+            <h3>Reciclador Activo</h3>
+            <p class="muted">10 intercambios completados</p>
+          </div>
+          <div class="card">
+            <h3>Embajador Local</h3>
+            <p class="muted">3 recomendaciones que resulten en trueques</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pilot" style="margin-top:26px">
+        <h2>¿Pilotamos en tu barrio?</h2>
+        <p class="muted">Déjanos tus datos y te avisamos cuando abramos el piloto en tu zona.</p>
+        <form id="pilotForm" onsubmit="event.preventDefault(); handlePilot();">
+          <label>Nombre</label>
+          <input id="name" placeholder="Tu nombre (ej. Sergio)" required />
+          <label>Email</label>
+          <input type="email" id="email" placeholder="hola@ejemplo.com" required />
+          <label>Barrio / Código Postal</label>
+          <input id="zone" placeholder="Ej: Gràcia, Barcelona o 08012" required />
+          <div style="margin-top:10px">
+            <button class="btn" type="submit">Apúntame al piloto</button>
+            <button type="button" class="btn ghost" id="openJoin2">Contactar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
+        <div>
+          <strong>Recirculate</strong><div class="muted">No tires, intercambia y recicla</div>
+        </div>
+        <div class="muted">Contacto: hola@recirculate.app</div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <h3>Únete al piloto</h3>
+      <p class="muted">Rellena estos datos y te avisamos cuando lancemos en tu barrio.</p>
+      <form onsubmit="event.preventDefault(); handleModal();">
+        <label>Nombre</label>
+        <input id="m-name" placeholder="Tu nombre" required />
+        <label>Email</label>
+        <input type="email" id="m-email" placeholder="hola@ejemplo.com" required />
+        <label>Barrio / CP</label>
+        <input id="m-zone" placeholder="Ej: Sants o 08028" required />
+        <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end">
+          <button class="btn" type="submit">Enviar</button>
+          <button class="btn ghost" type="button" id="closeModal">Cerrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    document.getElementById('openJoin').addEventListener('click', ()=> modal.classList.add('open'));
+    document.getElementById('openJoin2').addEventListener('click', ()=> modal.classList.add('open'));
+    document.getElementById('closeModal').addEventListener('click', ()=> modal.classList.remove('open'));
+
+    function handleModal(){
+      const name = document.getElementById('m-name').value || 'amigo';
+      modal.classList.remove('open');
+      alert('Gracias, ' + name + '! Te apuntamos al piloto.');
+    }
+
+    function handlePilot(){
+      const name = document.getElementById('name').value || 'amigo';
+      alert('Perfecto, ' + name + '. Te apuntamos al piloto — gracias!');
+      document.getElementById('pilotForm').reset();
+    }
+  </script>
+</body>
+</html>
