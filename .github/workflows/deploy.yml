@@ -2,8 +2,7 @@ name: Deploy static site to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -18,7 +17,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,13 +26,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # NO build needed because you have plain HTML
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./
 
       - name: Deploy
-        id: deploy
+        id: deployment
         uses: actions/deploy-pages@v4
+
 
