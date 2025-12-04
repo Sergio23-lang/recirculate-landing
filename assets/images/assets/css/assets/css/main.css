@@ -1,3 +1,11 @@
-/* Archivo principal de estilos.
-   Aquí irá el CSS a medida que avancemos la landing. */
+/* Estilos iniciales del proyecto. */
+/* Aquí irá el CSS a medida que avancemos la landing. */
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 
