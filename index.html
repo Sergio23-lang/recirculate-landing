@@ -91,7 +91,30 @@
       <section id="pilot" style="margin-top:26px">
         <h2>¿Pilotamos en tu barrio?</h2>
         <p class="muted">Déjanos tus datos y te avisamos cuando abramos el piloto en tu zona.</p>
-        <form id="pilotForm" onsubmit="event.preventDefault(); handlePilot();">
+        <form action="https://formsubmit.co/appreciclate13@gmail.com" method="POST">
+
+  <input type="hidden" name="_subject" value="Nuevo registro – Piloto Recirculate">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://sergio23-lang.github.io/recirculate-landing/?gracias=true">
+
+  <label>Nombre</label>
+  <input id="name" placeholder="Tu nombre (ej. Sergio)" required />
+
+  <label>Email</label>
+  <input type="email" id="email" placeholder="hola@ejemplo.com" required />
+
+  <label>Barrio / Código Postal</label>
+  <input id="zone" placeholder="Ej: Gràcia, Barcelona o 08012" required />
+
+  <div style="margin-top:10px;">
+    <button class="btn" type="submit">Apúntame al piloto</button>
+    <button type="button" class="btn ghost" id="openJoin">Contactar</button>
+  </div>
+
+</form>
+
+          
           <label>Nombre</label>
           <input id="name" placeholder="Tu nombre (ej. Sergio)" required />
           <label>Email</label>
