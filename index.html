@@ -165,18 +165,6 @@
     document.getElementById('openJoin').addEventListener('click', ()=> modal.classList.add('open'));
     document.getElementById('openJoin2').addEventListener('click', ()=> modal.classList.add('open'));
     document.getElementById('closeModal').addEventListener('click', ()=> modal.classList.remove('open'));
-
-    function handleModal(){
-      const name = document.getElementById('m-name').value || 'amigo';
-      modal.classList.remove('open');
-      alert('Gracias, ' + name + '! Te apuntamos al piloto.');
-    }
-
-    function handlePilot(){
-      const name = document.getElementById('name').value || 'amigo';
-      alert('Perfecto, ' + name + '. Te apuntamos al piloto — gracias!');
-      document.getElementById('pilotForm').reset();
-    }
   </script>
 <script src="assets/js/main.js"></script>
 </body>
